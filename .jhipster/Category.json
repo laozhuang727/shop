@@ -1,0 +1,41 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "subCategory",
+            "otherEntityName": "category",
+            "otherEntityRelationshipName": "parentCategory"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "parentCategory",
+            "otherEntityName": "category",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "comment": "The firstname attribute.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "icon",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pic",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20161006032003",
+    "javadoc": "The Category entity.",
+    "entityTableName": "category",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

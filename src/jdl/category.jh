@@ -1,0 +1,16 @@
+/**
+ * The Category entity.
+ */
+entity Category {
+	/**
+	* The firstname attribute.
+	*/
+	name String required,
+	icon String,
+	pic String,
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Category{subCategory} to Category{parentCategory}
+}

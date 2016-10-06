@@ -37,5 +37,13 @@
            timeToLiveSeconds="3600">
     </cache>
     
+    <cache name="com.legendshop.mobile.domain.Category"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
+    <cache name="com.legendshop.mobile.domain.Category.subCategories"
+                               timeToLiveSeconds="3600">
+                        </cache>
+                        
     <!-- jhipster-needle-ehcache-add-entry -->
 </ehcache>
