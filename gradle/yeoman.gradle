@@ -4,9 +4,9 @@ apply plugin: 'com.moowork.gulp'
 
 task bower(type: Exec) {
     if (Os.isFamily(Os.FAMILY_WINDOWS)) {
-        commandLine 'cmd', '/c', 'bower', 'install'
+        commandLine 'cmd', '/c', 'bower', 'install --allow-root'
     }else{
-        commandLine 'bower', 'install'
+        commandLine 'bower', 'install --allow-root'
     }
 }
 processResources.dependsOn 'bower'
