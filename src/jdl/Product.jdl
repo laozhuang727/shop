@@ -1,0 +1,37 @@
+/**
+ * The Product entity.
+ */
+entity Product {
+	/**
+	* 商品名称.
+	*/
+	name String required,
+	icon String,
+	/**
+    * 售卖价.
+    */
+	salePrice Float required min(0),
+	/**
+    * 市场价.
+    */
+	marketPrice Float required min(0),
+	/**
+    * 入货价.
+    */
+	originPrice Float,
+	/**
+    * 折扣.
+    */
+	discount Float,
+    saleCount Integer,
+    /**
+    * 是否新品.
+    */
+    isNew Boolean,
+    goodRemark Integer,
+    commentCount Integer,
+}
+
+service Product with serviceClass
+
+paginate Product with infinite-scroll

@@ -1,0 +1,120 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProductLabel" translate="shopApp.product.home.createOrEditLabel">Create or edit a Product</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.product.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.product.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.icon" for="field_icon">Icon</label>
+            <input type="text" class="form-control" name="icon" id="field_icon"
+                    ng-model="vm.product.icon"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.salePrice" for="field_salePrice">Sale Price</label>
+            <input type="number" class="form-control" name="salePrice" id="field_salePrice"
+                    ng-model="vm.product.salePrice"
+                    required min="0" />
+            <div ng-show="editForm.salePrice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.salePrice.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.salePrice.$error.min" translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.salePrice.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.marketPrice" for="field_marketPrice">Market Price</label>
+            <input type="number" class="form-control" name="marketPrice" id="field_marketPrice"
+                    ng-model="vm.product.marketPrice"
+                    required min="0" />
+            <div ng-show="editForm.marketPrice.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.marketPrice.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.marketPrice.$error.min" translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.marketPrice.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.originPrice" for="field_originPrice">Origin Price</label>
+            <input type="number" class="form-control" name="originPrice" id="field_originPrice"
+                    ng-model="vm.product.originPrice"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.discount" for="field_discount">Discount</label>
+            <input type="number" class="form-control" name="discount" id="field_discount"
+                    ng-model="vm.product.discount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.saleCount" for="field_saleCount">Sale Count</label>
+            <input type="number" class="form-control" name="saleCount" id="field_saleCount"
+                    ng-model="vm.product.saleCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.isNew" for="field_isNew">Is New</label>
+            <input type="checkbox" class="form-control" name="isNew" id="field_isNew"
+                    ng-model="vm.product.isNew"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.goodRemark" for="field_goodRemark">Good Remark</label>
+            <input type="number" class="form-control" name="goodRemark" id="field_goodRemark"
+                    ng-model="vm.product.goodRemark"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="shopApp.product.commentCount" for="field_commentCount">Comment Count</label>
+            <input type="number" class="form-control" name="commentCount" id="field_commentCount"
+                    ng-model="vm.product.commentCount"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

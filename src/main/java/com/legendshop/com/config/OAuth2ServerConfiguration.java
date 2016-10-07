@@ -60,6 +60,7 @@ public class OAuth2ServerConfiguration {
                 .antMatchers("/api/authenticate").permitAll()
                 .antMatchers("/api/register").permitAll()
                 .antMatchers("/api/categories/**").permitAll()
+                .antMatchers("/api/products**").permitAll()
                 .antMatchers("/api/**").authenticated()
 //                .antMatchers("/api/**").permitAll()
                 .antMatchers("/management/**").hasAuthority(AuthoritiesConstants.ADMIN)
